@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <init_sw1.c>
-include < IO.h>
+#include < IO.h>
 #include <uart_init.h>
 #include <uart_init.c>
 #include <sw1_input.h>
