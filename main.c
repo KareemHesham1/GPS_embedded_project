@@ -5,14 +5,14 @@
 #define CR 0x0D
 #include <stdio.h>
 #include <stdlib.h>
-#include <init_sw1.c>
-#include < IO.h>
-#include <uart_init.h>
-#include <uart_init.c>
-#include <sw1_input.h>
-#include <rgp_output.c>
-#include <init_sw1.h>
-#include <init_rgb.h>
+#include "init_sw1.c"
+#include " IO.h"
+#include "uart_init.h"
+#include "uart_init.c"
+#include "sw1_input.h"
+#include "rgp_output.c"
+#include "init_sw1.h"
+#include "init_rgb.h"
 int main()
 {
  
