@@ -1,6 +1,8 @@
 #include "tm4c123gh6pm.h"
 #include "init_rgp.h"
 
+// Kareem Hesham 2101780
+
 void init_rgb(void)
 {
 	SYSCTL_RCGCGPIO_R |=0x20;
