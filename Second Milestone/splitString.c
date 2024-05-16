@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "splitString.h"
 
 void splitString(char *inputString, char delimiter, char result[15][15]) {
   int i;
