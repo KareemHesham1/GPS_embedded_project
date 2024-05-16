@@ -1,5 +1,13 @@
 #include "tm4c123gh6pm.h"
 #include "EEPROM.h"
+#include <string.h>
+#include <stdint.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 void EEPROMINIT(void){
     SYSCTL_RCGCEEPROM_R |= SYSCTL_RCGCEEPROM_R0;    // enable eprom clk
     while((SYSCTL_PREEPROM_R & SYSCTL_RCGCEEPROM_R0)==0); /// delay // stuck here using simulation
