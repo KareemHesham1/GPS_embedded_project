@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
-get_long_lat.h
+#include "get_long_lat.h"
 
 void lat_1 ()
 {
