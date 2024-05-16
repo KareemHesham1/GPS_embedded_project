@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "get_long_lat.h"
 
 
 char test2[15]={0};
