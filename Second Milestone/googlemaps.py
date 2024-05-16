@@ -2,9 +2,9 @@ import gmplot
 import pandas as pd
 import os, sys, string
 
-df = pd.read_csv (r'LOCAT.CSV')
+df = pd.read_csv (r'serial_data.CSV')
 lat =df['lat'].tolist()
-lon =df['lon'].tolist()
+lon =df['long'].tolist()
 
 # Create the map plotter:
 gmap = gmplot.GoogleMapPlotter(lat[0], lon[0], 18, apikey="AIzaSyCu-ZEoB8OGYDM3eb31skY43HTRoqdrftA")
@@ -19,3 +19,4 @@ gmap.marker(lat[-1], lon[-1], color='#ff0000')
 # Draw the map:
 gmap.draw('map.html')
 os.startfile("map.html")
+
