@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <lcd.h>
+#include "lcd.h"
 void delay(long d)
 {
    while(d--);
