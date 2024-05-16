@@ -1,23 +1,31 @@
 #include "tm4c123gh6pm.h"
-#include<string.h>
-#include<stdint.h>
+#include <string.h>
+#include <stdint.h>
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "get_long_lat.h"
 
+#include "EEPROM.h"
+#include "RGBinit.h"
+#include "UARTS_Utilitiez.h"
+#include "get_deg.h"
+#include "get_long_lat.h"
+#include "lcd.h"
+#include "splitString.h"
+#include "todeg.h"
+#include "torad.h"
 
 char test2[15]={0};
- char test[100]="";
-    char splited[15][15]={0};
-        float current_lat =0;
-        float current_long=0;
-        float next_lat=0;
-        float next_long=0;
+char test[100]="";
+char splited[15][15]={0};
+float current_lat =0;
+float current_long=0;
+float next_lat=0;
+float next_long=0;
 
-float distance =0;
+float distance = 0;
 
 int main(){
     portBInit();
@@ -27,24 +35,32 @@ int main(){
     UART7Init();
     LCD_Init();
     EEPROMINIT();
-    int counter_eeprom_write=0;
-    int counter_eeprom_read=0;
-    int lat=0;
-    int loong=0;
+ 
+    int counter_eeprom_write = 0;
+    int counter_eeprom_read = 0;
+    int lat = 0;
+    int loong = 0;
+ 
     UART7_readstr(test);
     splitString(test,',',splited);
-    lat =(float)atof(splited[3])*100000;
+ 
+    lat = (float)atof(splited[3])*100000;
+ 
     EEPROM_Write(counter_eeprom_write,lat);
-    counter_eeprom_write+=4;
-    loong =(float)atof(splited[5])*100000;
+ 
+    counter_eeprom_write += 4;
+    loong = (float)atof(splited[5])*100000;
+ 
     EEPROM_Write(counter_eeprom_write,loong);
+ 
     counter_eeprom_write+=4;
+ 
     LCD_CMD(0x80);
-               LCD_SendString("DIS:",4);
-               LCD_CMD(0xC0);
-               LCD_SendString("0",1);
+    LCD_SendString("DIS:",4);
+    LCD_CMD(0xC0);
+    LCD_SendString("0",1);
     lat_1();
-      long_1();
+    long_1();
 
     while(1){
     UART7_readstr(test);
